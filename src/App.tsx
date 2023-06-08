@@ -45,7 +45,7 @@ function App() {
                       {error ? <h4>Valid email required!</h4> : null}
                     </div>
                   <input name="email" className={error ? 'input-error' : ''} onChange = {handleChange} placeholder='email@company.com'/>
-                    <SubmitButton text="Subscribe to monthly later"/>
+                    <SubmitButton text="Subscribe to monthly newsletter"/>
                   </form>  
                 </div>
                 </div>
