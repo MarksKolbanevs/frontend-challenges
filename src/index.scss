@@ -1,0 +1,230 @@
+@font-face { font-family: Roboto-Bold; src: url('./../public/assets/fonts/Roboto-Bold.ttf')};
+@font-face { font-family: Roboto-Regular; src: url('./../public/assets/fonts/Roboto-Regular.ttf')};
+
+$charcoal-grey:hsl(235, 18%, 26%);
+$white:hsl(0, 0%, 100%);
+$dark-slate-grey:hsl(234, 29%, 20%);
+$grey:hsl(231, 7%, 60%);
+$tomato:hsl(4, 100%, 67%);
+
+body,html{
+    font-family: Roboto-Regular;
+    color:$dark-slate-grey;
+    margin: 0;
+    overflow-y: hidden;
+}
+button,input{
+    border: none;
+    outline: none;
+}
+p,h1,h2,h3,h4{
+    margin: 0;
+}
+
+.subscription-section{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    background-color: $charcoal-grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1{
+        font-family: Roboto-Bold;
+        font-size: 56px;
+    }
+    
+    p{
+        font-family: Roboto-Regular;
+        font-size: 16px;
+    }
+    .subscription-container{
+        background-color: $white;
+            border-radius: 25px;
+            padding: 20px 20px 20px 60px;
+            max-height: 595px;
+            height: 100%;
+            width: 840px;
+            max-width: 100%;
+            display: flex;
+            gap:65px;
+            .left-container{
+                max-width: 375px;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                .centered-container{
+                    display: flex;
+                    flex-direction: column;
+                    .hero-text{
+                        display: flex;
+                        flex-direction: column;
+                        gap:25px;
+                    }   
+                    ul{
+                        list-style-position: inside;
+                        list-style-image: url('../public/assets/images/icon-list.svg');
+                        display: flex;
+                        flex-direction: column;
+                        margin-top: 30px;
+                        margin-bottom: 45px;
+                        gap:10px;
+                        padding: 0;
+                    }
+                    .email-form{
+                        display: flex;
+                        flex-direction: column;
+                        gap:10px;
+                        .label-container{
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                           label{
+                            font-family: Roboto-Bold;
+                            font-size: 12px;
+                            }
+                            h4{
+                                font-size: 12px;
+                                color: $tomato;
+                            }
+                        }
+                       input{
+                            padding: 20px 25px 20px 25px;
+                            border-radius: 7px;
+                            border: 1px solid $grey;
+                            margin-bottom: 10px;
+                            color: $dark-slate-grey;
+                            font-size: 14px;      
+                        }
+                        .input-error{
+                            border:1px solid $tomato;
+                            color:$tomato;
+                            background-color: #FFE8E6;
+                        }
+                        input:hover{
+                            border: 1px solid $dark-slate-grey;  
+                        }
+                    }
+                }
+            }
+            .right-container{
+                position: relative;
+                max-width: 400px;
+                width: 100%;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 15px;
+                    object-fit: cover;
+                }
+            }  
+    }
+}
+.submited-container{
+    width: auto;
+    background-color: $white;
+    border-radius: 25px;
+    max-width: 375px;
+    width: 100%;
+    padding: 50px 65px 65px 65px;
+    display: flex;
+    flex-direction: column;
+    .hero-text{
+        display: flex;
+        flex-direction: column;
+        gap:30px;
+        margin-top: 45px;
+        margin-bottom: 45px;
+    } 
+}
+
+
+.submit-button{
+    padding: 20px 0px 20px 0px;
+    width: 100%;
+    border-radius: 8px;
+    background-color: $dark-slate-grey;
+    color:$white;
+    position: relative;
+    z-index: 1;
+    p{
+        position: relative;
+        z-index: 2;
+       font-family: Roboto-Regular;
+        font-size: 14px; 
+    }
+}
+
+.submit-button:hover{
+    transition: 0.4s ease;
+    cursor: pointer;
+    background: linear-gradient(90deg, rgba(255,83,123,1) 0%, rgba(255,105,58,1) 100%);
+}
+
+.submit-button:hover::before{
+    transition: 0.4s ease;
+    content:'';
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height:100%;
+    background: linear-gradient(90deg, rgba(255,83,123,1) 0%, rgba(255,105,58,1) 100%);
+    filter: blur(25px);
+    opacity: 75%;
+    transform: translateY(10px) scale(0.8);
+}
+
+
+@media screen and (max-width: 920px) {
+    .subscription-container{
+        max-height: 100vh !important;
+        height: 100% !important;
+        width: 100% !important;;
+        padding: 0px !important;
+        border-radius: 0px !important;
+        flex-direction: column-reverse !important;
+        align-items: center !important;
+        gap:45px !important;
+    }
+    .left-container{
+        max-width: 325px !important;
+        width: 100% !important;
+        margin-bottom: 40px !important;
+    }
+    .right-container{
+        height: 100% !important;
+        max-width: initial !important;
+        img{
+            border-radius: 0px !important;
+            border-bottom-left-radius: 15px !important;
+            border-bottom-right-radius: 15px !important;  
+        }
+        
+    }
+    h1{
+        font-size: 40px !important;
+    }
+}
+
+@media screen and (max-width: 505px) {
+    p{
+        line-height: 1.5;
+    }
+    .submited-container{
+        height: 100% !important;
+        max-width: initial !important;
+        border-radius: initial !important;
+        padding: 0px 25px 45px 25px !important;
+
+        main{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+        }
+    }
+}
