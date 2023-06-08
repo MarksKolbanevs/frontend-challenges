@@ -153,7 +153,7 @@ p,h1,h2,h3,h4{
         position: relative;
         z-index: 2;
         font-family: Roboto-Bold;
-        font-size: 14px; 
+        font-size: 16px; 
     }
 }
 
@@ -210,15 +210,11 @@ p,h1,h2,h3,h4{
 }
 
 @media screen and (max-width: 505px) {
-    p{
-        line-height: 1.5;
-    }
     .submited-container{
         height: 100% !important;
         max-width: initial !important;
         border-radius: initial !important;
         padding: 0px 25px 45px 25px !important;
-
         main{
             height: 100%;
             display: flex;
