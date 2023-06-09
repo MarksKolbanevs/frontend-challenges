@@ -1,0 +1,160 @@
+//Primary
+$purple:hsl(259, 100%, 65%);
+$lightRed:hsl(0, 100%, 67%);
+
+//Neutral
+$white:hsl(0, 0%, 100%);
+$offWhite:hsl(0, 0%, 94%);
+$lightGrey:hsl(0, 0%, 86%);
+$smokeyGrey:hsl(0, 1%, 44%);
+$offBlack:hsl(0, 0%, 8%);
+
+//Fonts
+@font-face { font-family: Poppins-Bold; src: url('./../public/assets/fonts/Poppins-Bold.ttf')};
+@font-face { font-family: Poppins-BoldItalic; src: url('./../public/assets/fonts/Poppins-BoldItalic.ttf')};
+@font-face { font-family: Poppins-ExtraBold; src: url('./../public/assets/fonts/Poppins-ExtraBold.ttf')};
+@font-face { font-family: Poppins-ExtraBoldItalic; src: url('./../public/assets/fonts/Poppins-ExtraBoldItalic.ttf')};
+@font-face { font-family: Poppins-Italic; src: url('./../public/assets/fonts/Poppins-Italic.ttf')};
+@font-face { font-family: Poppins-Regular; src: url('./../public/assets/fonts/Poppins-Regular.ttf')};
+
+//Basics
+html,body{
+    margin: 0;
+}
+button,input{
+    outline: none;
+    border:none;
+}
+h1{
+    font-family: Poppins-ExtraBoldItalic;
+    font-size: 94px;
+    color: $offBlack;
+    margin: 0;
+}
+
+p{
+    margin: 0;
+}
+
+
+//Classes
+section{
+    position: absolute;
+    top:0px;
+    left:0px;
+    right:0px;
+    bottom: 0px;
+    background-color: $offWhite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    main{
+        max-width: 730px;
+        width: 100%;
+        padding: 60px 55px 50px 55px;
+        background-color: $white;
+        border-radius: 20px;
+        border-bottom-right-radius: 150px;
+        margin: 0px 15px 0px 15px;
+        .time-inputs-container{
+            border-bottom: 1px solid $lightGrey;
+            padding-bottom: 50px;
+            display: flex;
+            gap:25px;
+            position: relative;
+            button{
+                position: absolute;
+                right: 0px;
+                bottom: -50px;
+                border-radius: 200px;
+                padding: 27px;
+                background-color: $purple;
+                cursor: pointer;
+                transition: 0.2s ease;
+            }
+            button:hover{
+                transition: 0.2s ease;
+                background-color: $offBlack;
+            }
+        }
+        .text-holder{
+            display: flex;
+            .purple{
+                color:$purple;
+                letter-spacing: 15px;
+            }
+        }
+    }
+}
+
+.date-input-container{
+    display: flex;
+    flex-direction: column;
+    gap:7px;
+    .date-input{
+        border-radius: 5px;
+        max-width: 115px;
+        width: 100%;
+        padding: 10px 22px 10px 22px;
+        border:1px solid $lightGrey;
+    }
+    .date-input:hover{
+        border:1px solid $purple;
+        transition: 0.2s ease;
+    }
+    label{
+      font-family: Poppins-Bold;
+      color: $smokeyGrey;
+      letter-spacing:2px;
+    }
+    .date-input, .date-input::placeholder{
+        font-size: 32px;
+        font-family: Poppins-Bold;
+        color: $smokeyGrey;
+    }
+    //Bottom error text
+    .error-message{
+        font-family: Poppins-Italic;
+        color: $lightRed;
+    }
+    //Red color for label
+    .red{
+        color: $lightRed;
+    }
+    //Red color for input border
+    .red-border{
+        border:1px solid $lightRed !important; // overwriting extisting border
+    }
+}
+
+
+@media screen and (max-width:775px) {
+    h1{
+        font-size: 56px !important;
+    }
+    main{
+        max-width: 345px !important;
+        width: 100%;
+        padding: 30px 25px 45px 25px !important;
+       .time-inputs-container{
+            padding-bottom: 100px !important;
+            margin-bottom: 80px !important;
+            button{
+                right: 30% !important;
+            }
+        } 
+    }
+    .date-input-container{
+        .date-input{
+            border-radius: 5px;
+            max-width: 64px !important;
+            width: 100% !important;
+            padding: 10px 15px 10px 15px;
+            border:1px solid $lightGrey;
+        }
+        .date-input, .date-input::placeholder{
+            font-size: 24px !important;
+        }
+    }
+    
+}
