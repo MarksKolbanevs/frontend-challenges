@@ -7,7 +7,7 @@ export default function DateInput(props:{placeholder:string,name:string,errorMes
         <div className="date-input-container">
         <label className={props.errorMessage ? "red" : ""} htmlFor={props.name}>{props.name}</label>
         <input className={props.errorMessage ? "date-input red-border" : "date-input"} name={props.name} placeholder={props.placeholder} onChange={handleChange}/>
-        {props.errorMessage ? <p className="error-message">{props.errorMessage}</p> : null}
+        <p className="error-message" style = {props.errorMessage ? {visibility:"visible"} : {visibility:"hidden"}}>{props.errorMessage ? props.errorMessage : "Error"}</p>
         </div>
     )
 }
